@@ -99,19 +99,10 @@ end
 -- !help command
 local function telegram_help()
   local i = 0
-  local text = "Plugins list:\n\n"
+  local text = "commands list:"
   -- Plugins names
-  for name in pairsByKeys(plugins) do
-    if plugins[name].hidden then
-      name = nil
-    else
-    i = i + 1
-    text = text..i..'. '..name..'\n'
-    end
-  end
-  text = text..'\n'..'There are '..i..' plugins help available.'
-  text = text..'\n'..'Write "!help [plugin name]" or "!help [plugin number]" for more info.'
-  text = text..'\n'..'Or "!help all" to show all info.'
+  text = text..'\n'..'  '
+  text = text..'\n'..'At comletion...'
   return text
 end
 
