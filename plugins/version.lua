@@ -3,10 +3,7 @@ do
 function run(msg, matches)
   return 'critech security '.. VERSION .. [[ 
   anti spammer and
-  group manager robot
- by cri-technology team
-  @willaim_critech
-  @heisenberg_critech for more info.]]
+  ►oM♦ID ■>WEI☻ZA╤D.]]
 end
 
 return {
