@@ -24,7 +24,7 @@ local function pre_process(msg)
   if msg.from.type == 'user' then
     local hash = 'user:'..user..':floodc'
     local msgs = tonumber(redis:get(hash) or 0)
-    local text = 'User '..user..' is flooding'
+    
     if msgs > NUM_MSG_MAX and not is_mod(msg) then
       local data = load_data(_config.moderation.data)
       local anti_flood_stat = data[tostring(chat)]['settings']['anti_flood']
