@@ -100,7 +100,7 @@ local function pre_process(msg)
     local hash = 'user:'..msg.from.id..':msgs'
     local msgs = tonumber(redis:get(hash) or 0)
     if msgs > NUM_MSG_MAX then
-      print('User '..msg.from.id..'is flooding '..msgs)
+     
       msg = nil
     end
     redis:setex(hash, TIME_CHECK, msgs+1)
