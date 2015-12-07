@@ -2,7 +2,7 @@
 do
 
 -- make sure to set with value that not higher than stats.lua
-local NUM_MSG_MAX = 3  -- Max number of messages per TIME_CHECK seconds
+local NUM_MSG_MAX = 6  -- Max number of messages per TIME_CHECK seconds
 local TIME_CHECK = 4
 
 local function is_anti_flood(msg)
@@ -24,7 +24,7 @@ local function pre_process(msg)
   if msg.from.type == 'user' then
     local hash = 'user:'..user..':floodc'
     local msgs = tonumber(redis:get(hash) or 0)
-    
+local text = 'User '..user..' is flooding'
     if msgs > NUM_MSG_MAX and not is_mod(msg) then
       local data = load_data(_config.moderation.data)
       local anti_flood_stat = data[tostring(chat)]['settings']['anti_flood']
